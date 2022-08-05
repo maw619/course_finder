@@ -19,10 +19,10 @@ public class HomeController {
     @GetMapping("/home")
     public String home(){
         homeService.deleteAll();
-        String pathA = "E:\\Ethical Hacking\\Ethical hack";
-        String pathB = "E:\\CBT Nuggets";
+        String pathA = "E:\\Ethical Hacking\\Ethical hack\\";
+        String pathB = "E:\\CBT Nuggets\\";
         String pathC = "Z:\\";
-        String pathD = "E:\\INE COLLECTION";
+        String pathD = "E:\\INE COLLECTION\\";
         String pathE = "E:\\MISC\\Athlean-X - AX-2 (Extreme) Jeff Cavaliere\\Workouts (Videos 001-99)";
         String pathF = "E:\\MISC\\Athlean-X - AX-2 (Extreme) Jeff Cavaliere\\Workouts (Videos 100-199)";
         String pathG = "E:\\MISC\\Athlean-X - AX-2 (Extreme) Jeff Cavaliere\\Workouts (Videos 200-299)";
@@ -76,46 +76,46 @@ public class HomeController {
         homeService.add(pathB);
         homeService.add(pathC);
         homeService.add(pathD);
-//        homeService.add(pathE);
-//        homeService.add(pathF);
-//        homeService.add(pathG);
-//        homeService.add(pathH);
-//        homeService.add(pathI);
-//        homeService.add(pathJ);
-//        homeService.add(pathK);
-//        homeService.add(pathL);
-//        homeService.add(pathM);
-//        homeService.add(pathN);
-//        homeService.add(pathO);
-//        homeService.add(pathP);
-//        homeService.add(pathQ);
-//        homeService.add(pathR);
-//        homeService.add(pathS);
-//        homeService.add(pathT);
-//        homeService.add(pathU);
-//        homeService.add(pathV);
-//        homeService.add(pathW);
-//        homeService.add(pathX);
-//        homeService.add(pathY);
-//        homeService.add(pathZ);
-//        homeService.add(path1A);
-//        homeService.add(path1B);
-//        homeService.add(path1C);
-//        homeService.add(path1D);
-//        homeService.add(path1E);
-//        homeService.add(path1F);
-//        homeService.add(path1G);
-//        homeService.add(path1H);
-//        homeService.add(path1I);
-//        homeService.add(path1J);
-//        homeService.add(path1K);
-//        homeService.add(path1L);
-//        homeService.add(path1M);
-//        homeService.add(path1N);
-//        homeService.add(path1O);
-//        homeService.add(path1P);
-//        homeService.add(path1Q);
-//        homeService.add(path1R);
+        homeService.add(pathE);
+        homeService.add(pathF);
+        homeService.add(pathG);
+        homeService.add(pathH);
+        homeService.add(pathI);
+        homeService.add(pathJ);
+        homeService.add(pathK);
+        homeService.add(pathL);
+        homeService.add(pathM);
+        homeService.add(pathN);
+        homeService.add(pathO);
+        homeService.add(pathP);
+        homeService.add(pathQ);
+        homeService.add(pathR);
+        homeService.add(pathS);
+        homeService.add(pathT);
+        homeService.add(pathU);
+        homeService.add(pathV);
+        homeService.add(pathW);
+        homeService.add(pathX);
+        homeService.add(pathY);
+        homeService.add(pathZ);
+        homeService.add(path1A);
+        homeService.add(path1B);
+        homeService.add(path1C);
+        homeService.add(path1D);
+        homeService.add(path1E);
+        homeService.add(path1F);
+        homeService.add(path1G);
+        homeService.add(path1H);
+        homeService.add(path1I);
+        homeService.add(path1J);
+        homeService.add(path1K);
+        homeService.add(path1L);
+        homeService.add(path1M);
+        homeService.add(path1N);
+        homeService.add(path1O);
+        homeService.add(path1P);
+        homeService.add(path1Q);
+        homeService.add(path1R);
 //        homeService.add(path1S);
 //        homeService.add(path1T);
 //        homeService.add(path1U);
@@ -125,15 +125,24 @@ public class HomeController {
 //        homeService.add(path1Y);
 //        homeService.add(path1Z);
 
-
-
         return "index";
       }
 
     @GetMapping("/home/top")
     public String changeTopic(@RequestParam String topic,Model model){
-        model.addAttribute("listar", homeService.listTopic(topic));
-        //System.out.println(homeService.listTopic(topic) + "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+        model.addAttribute("listar", homeService.findByFullPath(topic));
         return "index";
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

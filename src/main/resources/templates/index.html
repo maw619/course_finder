@@ -12,7 +12,7 @@
 <body class="container">
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/home">Fixed top</a>
+        <a class="navbar-brand" href="/home">Course Search</a>
         <form th:action="@{/home/top}">
             <input type="text" th:name="topic" class="form-control" />
             <button type="submit" class="btn btn-success">Search</button>
@@ -20,19 +20,16 @@
     </div>
 </nav>
 <br>
-<br><br>
 <br>
 <br>
 <br>
 <br>
 <br>
-<!--<main role="main" class="container">-->
-<!--<ul class="list-group" th:each = "x : ${listar}">-->
-<!--    <li class="list-group-item" th:text="${x.fullPath}"></li>-->
-<!--</ul>-->
-<!--</main>-->
+<br>
+<br>
+
 <ul th:each = "x : ${listar}">
-    <li th:text="${x.fullPath}"></li>
+    <li><a th:href="@{x.fullPath}"><p th:text="${x.fullPath}"></p></a> </li>
 </ul>
 </body>
 </html>
