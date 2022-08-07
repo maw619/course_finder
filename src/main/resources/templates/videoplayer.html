@@ -11,11 +11,18 @@
 
 <body class="container">
 
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe class="embed-responsive-item" src="localhost:88/33.mp4" allowfullscreen></iframe>
-</div>
+<!--<div class="embed-responsive embed-responsive-16by9">-->
+<!--    <iframe class="embed-responsive-item" src="http://192.168.1.218:88/33.mp4" allowfullscreen></iframe>-->
+<!--</div>-->
+
+<tr th:block="x: ${listar}">
+    <td th:text="${x.name}" />
+
 <video width="320" height="240" controls>
-    <source src="http://localhost:88/33.mp4" type="video/mp4">
+    <source th:src="@{x.path}" type="video/mp4">
 </video>
+
+</tr>
+
 </body>
 </html>
