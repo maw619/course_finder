@@ -31,7 +31,7 @@
         <th>URL</th>
     </tr>
     <tbody>
-    <tr th:each = "x : ${listar}">
+    <tr th:each = "x : ${listar2}">
         <td th:text="${x.name}"></td>
         <td><a th:href="@{/home/thirdFolder/(url=${x})}"><p th:text="${x}"></p></a></td>
     </tr>

@@ -28,7 +28,7 @@ public class HomeController {
 
     @GetMapping("/home/secondFolder")
     public String secondFolder(@RequestParam String url, Model model) throws IOException {
-        model.addAttribute("listar", homeService.findSubFolder(url));
+        model.addAttribute("listar2", homeService.findSubFolder(url));
         String redirect = "index2";
         for(int i = 0; i < homeService.findSubFolder(url).length;i++){
             if(homeService.findSubFolder(url)[i].getAbsolutePath().contains(".mp4")){
@@ -43,10 +43,10 @@ public class HomeController {
 
     @GetMapping("/home/thirdFolder")
     public String thirdFolder(@RequestParam String url, Model model) throws IOException {
-        model.addAttribute("listar", homeService.findSubFolder2(url));
+        model.addAttribute("listar3", homeService.findSubFolder2(url));
         String redirect = "index";
         for (int i = 0; i < homeService.findSubFolder2(url).length; i++) {
-            if(homeService.findSubFolder2(url)[i].getAbsolutePath().contains(".mp4") || homeService.findSubFolder2(url)[i].getAbsolutePath().contains(".mkv") || homeService.findSubFolder2(url)[i].getAbsolutePath().contains(".ts")){
+            if(homeService.findSubFolder2(url)[i].getAbsolutePath().contains(".mp4")){
                 redirect = "videoplayer";
             }
         }
