@@ -25,15 +25,17 @@
 <br>
 <br>
 <br>
+
+
 <table class="table table-striped">
     <tr>
         <th>Name</th>
         <th>URL</th>
     </tr>
     <tbody>
-    <tr th:each = "x : ${listar2}">
+    <tr th:each = "x : ${listar1}">
         <td th:text="${x.name}"></td>
-        <td><a th:href="@{/home/thirdFolder/(url=${x})}"><p th:text="${x}"></p></a></td>
+        <td><a th:href="@{/home/secondFolder/(url=${x})}"><p th:text="${x}"></p></a></td>
     </tr>
     </tbody>
 </table>
